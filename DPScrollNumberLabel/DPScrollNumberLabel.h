@@ -249,5 +249,6 @@ typedef NS_ENUM(NSUInteger, SignSetting) {
  */
 - (void)changeToNumber:(NSNumber *)number interval:(CGFloat)interval animated:(BOOL)animated;
 
+- (void)updateNumberColor:(UIColor *)color;
 
 @end

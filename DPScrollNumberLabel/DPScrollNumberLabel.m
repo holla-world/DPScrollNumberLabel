@@ -333,7 +333,7 @@ static NSString * const numberCellText = @"0\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0\n1\n2
     NSInteger targetRowNumber = [self calculateNumberRow:self.targetNumber.intValue];
     
     if (targetRowNumber > self.rowNumber) {
-        [self updateToRowNumber:targetRowNumber];
+		return;
     }
     
     NSArray *repeatCountArray = [self getRepeatTimesWithChangeNumber:changeValue targetNumber:self.targetNumber.integerValue];
@@ -529,6 +529,12 @@ static NSString * const numberCellText = @"0\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0\n1\n2
         }
     }
     self.currentNumber = number;
+}
+
+- (void)updateNumberColor:(UIColor *)color {
+	for (UILabel *cell in self.cellArray) {
+		cell.textColor = color;
+	}
 }
 
 #pragma mark - Privite Method
