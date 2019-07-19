@@ -521,6 +521,8 @@ static NSString * const numberCellText = @"0\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0\n1\n2
             [self playAnimationWithChange:number.integerValue - previousNumber.integerValue previousNumber:previousNumber interval:interval];
             self.isAnimating = YES;
         } else {
+			NSInteger needNumberRow = [self calculateNumberRow:number.intValue];
+			[self updateToRowNumber:needNumberRow];
             int sign = number.integerValue >= 0 ? 1 : -1;
             NSArray<NSNumber *> *displayNumbers = [self getEachCellValueArrayWithTargetNumber:number.integerValue];
             for (int i = 0; i < displayNumbers.count; i++) {
